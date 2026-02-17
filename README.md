@@ -115,7 +115,7 @@ kem.destroy();
 ```json
 {
   "imports": {
-    "liboqs": "npm:@oqs/liboqs-js@^0.15.0"
+    "liboqs": "npm:@oqs/liboqs-js@^0.15.1"
   }
 }
 ```
@@ -820,7 +820,7 @@ MIT License - see [LICENSE.md](LICENSE.md) for details.
 ## Versioning
 
 This library's version tracks the bundled LibOQS version:
-- `@oqs/liboqs-js 0.15.x` includes `LibOQS 0.15.0`
+- `@oqs/liboqs-js 0.15.x` includes `LibOQS 0.15.1`
 
 ## Disclaimer
 

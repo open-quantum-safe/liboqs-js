@@ -1,6 +1,6 @@
 {
   "name": "@oqs/liboqs-js",
-  "version": "0.15.0",
+  "version": "0.15.1",
   "description": "Post-quantum cryptography for Node.js and browsers via WebAssembly bindings to liboqs",
   "type": "module",
   "main": "src/index.js",
