@@ -1,0 +1,201 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get LibOQS commit hash
+        id: liboqs-hash
+        run: |
+          LIBOQS_HASH=$(git ls-remote https://github.com/open-quantum-safe/liboqs.git refs/heads/main | cut -f1)
+          echo "hash=$LIBOQS_HASH" >> $GITHUB_OUTPUT
+          echo "LibOQS commit: $LIBOQS_HASH"
+
+      - name: Cache WASM modules
+        id: cache-wasm
+        uses: actions/cache@v4
+        with:
+          path: dist/
+          key: wasm-${{ steps.liboqs-hash.outputs.hash }}-${{ hashFiles('build.sh', 'algorithms.json') }}
+          restore-keys: |
+            wasm-${{ steps.liboqs-hash.outputs.hash }}-
+            wasm-
+
+      - name: Setup Emscripten
+        if: steps.cache-wasm.outputs.cache-hit != 'true'
+        uses: mymindstorm/setup-emsdk@v14
+
+      - name: Build WASM modules
+        if: steps.cache-wasm.outputs.cache-hit != 'true'
+        run: ./build.sh
+
+      - name: Verify WASM modules
+        run: |
+          set -euo pipefail
+          expected=$(jq '[.kem, .sig, ."sig-stateful" | .. | .slug? | select(. != null)] | length' algorithms.json)
+          node_count=$(find dist/ -name "*.min.js" -type f | wc -l)
+          deno_count=$(find dist/ -name "*.deno.js" -type f | wc -l)
+
+          echo "Expected: $expected modules per runtime"
+          echo "Node.js modules: $node_count"
+          echo "Deno modules: $deno_count"
+
+          if [ "$node_count" -ne "$expected" ]; then
+            echo "::error::Node.js module count mismatch. Expected $expected, got $node_count"
+            exit 1
+          fi
+
+          if [ "$deno_count" -ne "$expected" ]; then
+            echo "::error::Deno module count mismatch. Expected $expected, got $deno_count"
+            exit 1
+          fi
+
+          echo "All $expected Node.js and Deno modules verified"
+
+      - name: Upload dist artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+          retention-days: 7
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download dist artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Install Playwright
+        run: bunx playwright install --with-deps chromium
+
+      - name: Run Node.js tests
+        run: bun run test
+
+  test-deno:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download dist artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+      - name: Setup Deno
+        uses: denoland/setup-deno@v2
+
+      - name: Run Deno tests
+        run: deno test --allow-read --allow-write --allow-run --allow-env --no-check tests/deno/
+
+  docs:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download dist artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Build documentation
+        run: bunx typedoc
+
+      - name: Upload pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/
+
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
+
+  publish:
+    needs: [test, test-deno]
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download dist artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+
+      - name: Check if version already published
+        id: check
+        run: |
+          PACKAGE_VERSION=$(node -p "require('./package.json').version")
+          if npm view @oqs/liboqs-js@$PACKAGE_VERSION version &>/dev/null; then
+            echo "Version $PACKAGE_VERSION already published"
+            echo "skip=true" >> $GITHUB_OUTPUT
+          else
+            echo "Version $PACKAGE_VERSION not yet published"
+            echo "skip=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Publish to npm
+        if: steps.check.outputs.skip == 'false'
+        run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

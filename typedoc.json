@@ -1,0 +1,55 @@
+{
+  "entryPoints": [
+    "src/index.js"
+  ],
+  "out": "docs",
+  "name": "@oqs/liboqs-js",
+  "readme": "README.md",
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "excludeInternal": true,
+  "excludeExternals": true,
+  "hideGenerator": true,
+  "includeVersion": true,
+  "sort": [
+    "source-order"
+  ],
+  "kindSortOrder": [
+    "Document",
+    "Project",
+    "Module",
+    "Namespace",
+    "Enum",
+    "EnumMember",
+    "Class",
+    "Interface",
+    "TypeAlias",
+    "Constructor",
+    "Property",
+    "Variable",
+    "Function",
+    "Method",
+    "Accessor",
+    "Reference"
+  ],
+  "navigation": {
+    "includeCategories": true,
+    "includeGroups": true
+  },
+  "plugin": [],
+  "theme": "default",
+  "githubPages": false,
+  "gitRevision": "main",
+  "gitRemote": "origin",
+  "sourceLinkTemplate": "https://github.com/open-quantum-safe/liboqs-js/blob/{gitRevision}/{path}#L{line}",
+  "markdownItOptions": {
+    "html": true
+  },
+  "searchInComments": true,
+  "cleanOutputDir": true,
+  "titleLink": "https://github.com/open-quantum-safe/liboqs-js",
+  "navigationLinks": {
+    "GitHub": "https://github.com/open-quantum-safe/liboqs-js",
+    "NPM": "https://www.npmjs.com/package/@oqs/liboqs-js"
+  }
+}

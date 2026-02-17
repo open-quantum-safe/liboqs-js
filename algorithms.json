@@ -1,0 +1,1057 @@
+{
+  "kem": {
+    "ml-kem": {
+      "ML-KEM-512": {
+        "slug": "ml-kem-512",
+        "cmake_var": "ml_kem_512",
+        "security": 1,
+        "standardized": true,
+        "keySize": {
+          "publicKey": 800,
+          "secretKey": 1632,
+          "ciphertext": 768,
+          "sharedSecret": 32
+        }
+      },
+      "ML-KEM-768": {
+        "slug": "ml-kem-768",
+        "cmake_var": "ml_kem_768",
+        "security": 3,
+        "standardized": true,
+        "keySize": {
+          "publicKey": 1184,
+          "secretKey": 2400,
+          "ciphertext": 1088,
+          "sharedSecret": 32
+        }
+      },
+      "ML-KEM-1024": {
+        "slug": "ml-kem-1024",
+        "cmake_var": "ml_kem_1024",
+        "security": 5,
+        "standardized": true,
+        "keySize": {
+          "publicKey": 1568,
+          "secretKey": 3168,
+          "ciphertext": 1568,
+          "sharedSecret": 32
+        }
+      }
+    },
+    "kyber": {
+      "Kyber512": {
+        "slug": "kyber-512",
+        "cmake_var": "kyber_512",
+        "security": 1,
+        "deprecated": true,
+        "keySize": {
+          "publicKey": 800,
+          "secretKey": 1632,
+          "ciphertext": 768,
+          "sharedSecret": 32
+        }
+      },
+      "Kyber768": {
+        "slug": "kyber-768",
+        "cmake_var": "kyber_768",
+        "security": 3,
+        "deprecated": true,
+        "keySize": {
+          "publicKey": 1184,
+          "secretKey": 2400,
+          "ciphertext": 1088,
+          "sharedSecret": 32
+        }
+      },
+      "Kyber1024": {
+        "slug": "kyber-1024",
+        "cmake_var": "kyber_1024",
+        "security": 5,
+        "deprecated": true,
+        "keySize": {
+          "publicKey": 1568,
+          "secretKey": 3168,
+          "ciphertext": 1568,
+          "sharedSecret": 32
+        }
+      }
+    },
+    "frodokem": {
+      "FrodoKEM-640-AES": {
+        "slug": "frodokem-640-aes",
+        "cmake_var": "frodokem_640_aes",
+        "security": 1,
+        "keySize": {
+          "publicKey": 9616,
+          "secretKey": 19888,
+          "ciphertext": 9752,
+          "sharedSecret": 16
+        }
+      },
+      "FrodoKEM-640-SHAKE": {
+        "slug": "frodokem-640-shake",
+        "cmake_var": "frodokem_640_shake",
+        "security": 1,
+        "keySize": {
+          "publicKey": 9616,
+          "secretKey": 19888,
+          "ciphertext": 9752,
+          "sharedSecret": 16
+        }
+      },
+      "FrodoKEM-976-AES": {
+        "slug": "frodokem-976-aes",
+        "cmake_var": "frodokem_976_aes",
+        "security": 3,
+        "keySize": {
+          "publicKey": 15632,
+          "secretKey": 31296,
+          "ciphertext": 15792,
+          "sharedSecret": 24
+        }
+      },
+      "FrodoKEM-976-SHAKE": {
+        "slug": "frodokem-976-shake",
+        "cmake_var": "frodokem_976_shake",
+        "security": 3,
+        "keySize": {
+          "publicKey": 15632,
+          "secretKey": 31296,
+          "ciphertext": 15792,
+          "sharedSecret": 24
+        }
+      },
+      "FrodoKEM-1344-AES": {
+        "slug": "frodokem-1344-aes",
+        "cmake_var": "frodokem_1344_aes",
+        "security": 5,
+        "keySize": {
+          "publicKey": 21520,
+          "secretKey": 43088,
+          "ciphertext": 21696,
+          "sharedSecret": 32
+        }
+      },
+      "FrodoKEM-1344-SHAKE": {
+        "slug": "frodokem-1344-shake",
+        "cmake_var": "frodokem_1344_shake",
+        "security": 5,
+        "keySize": {
+          "publicKey": 21520,
+          "secretKey": 43088,
+          "ciphertext": 21696,
+          "sharedSecret": 32
+        }
+      }
+    },
+    "hqc": {
+      "HQC-128": {
+        "slug": "hqc-128",
+        "cmake_var": "hqc_128",
+        "security": 1,
+        "keySize": {
+          "publicKey": 2249,
+          "secretKey": 2305,
+          "ciphertext": 4433,
+          "sharedSecret": 64
+        }
+      },
+      "HQC-192": {
+        "slug": "hqc-192",
+        "cmake_var": "hqc_192",
+        "security": 3,
+        "keySize": {
+          "publicKey": 4522,
+          "secretKey": 4586,
+          "ciphertext": 8978,
+          "sharedSecret": 64
+        }
+      },
+      "HQC-256": {
+        "slug": "hqc-256",
+        "cmake_var": "hqc_256",
+        "security": 5,
+        "keySize": {
+          "publicKey": 7245,
+          "secretKey": 7317,
+          "ciphertext": 14421,
+          "sharedSecret": 64
+        }
+      }
+    },
+    "classic-mceliece": {
+      "Classic-McEliece-348864": {
+        "slug": "classic-mceliece-348864",
+        "cmake_var": "classic_mceliece_348864",
+        "security": 1,
+        "keySize": {
+          "publicKey": 261120,
+          "secretKey": 6492,
+          "ciphertext": 96,
+          "sharedSecret": 32
+        }
+      },
+      "Classic-McEliece-348864f": {
+        "slug": "classic-mceliece-348864f",
+        "cmake_var": "classic_mceliece_348864f",
+        "security": 1,
+        "keySize": {
+          "publicKey": 261120,
+          "secretKey": 6492,
+          "ciphertext": 96,
+          "sharedSecret": 32
+        }
+      },
+      "Classic-McEliece-460896": {
+        "slug": "classic-mceliece-460896",
+        "cmake_var": "classic_mceliece_460896",
+        "security": 3,
+        "keySize": {
+          "publicKey": 524160,
+          "secretKey": 13608,
+          "ciphertext": 156,
+          "sharedSecret": 32
+        }
+      },
+      "Classic-McEliece-460896f": {
+        "slug": "classic-mceliece-460896f",
+        "cmake_var": "classic_mceliece_460896f",
+        "security": 3,
+        "keySize": {
+          "publicKey": 524160,
+          "secretKey": 13608,
+          "ciphertext": 156,
+          "sharedSecret": 32
+        }
+      },
+      "Classic-McEliece-6688128": {
+        "slug": "classic-mceliece-6688128",
+        "cmake_var": "classic_mceliece_6688128",
+        "security": 5,
+        "keySize": {
+          "publicKey": 1044992,
+          "secretKey": 13932,
+          "ciphertext": 208,
+          "sharedSecret": 32
+        }
+      },
+      "Classic-McEliece-6688128f": {
+        "slug": "classic-mceliece-6688128f",
+        "cmake_var": "classic_mceliece_6688128f",
+        "security": 5,
+        "keySize": {
+          "publicKey": 1044992,
+          "secretKey": 13932,
+          "ciphertext": 208,
+          "sharedSecret": 32
+        }
+      },
+      "Classic-McEliece-6960119": {
+        "slug": "classic-mceliece-6960119",
+        "cmake_var": "classic_mceliece_6960119",
+        "security": 5,
+        "keySize": {
+          "publicKey": 1047319,
+          "secretKey": 13948,
+          "ciphertext": 194,
+          "sharedSecret": 32
+        }
+      },
+      "Classic-McEliece-6960119f": {
+        "slug": "classic-mceliece-6960119f",
+        "cmake_var": "classic_mceliece_6960119f",
+        "security": 5,
+        "keySize": {
+          "publicKey": 1047319,
+          "secretKey": 13948,
+          "ciphertext": 194,
+          "sharedSecret": 32
+        }
+      },
+      "Classic-McEliece-8192128": {
+        "slug": "classic-mceliece-8192128",
+        "cmake_var": "classic_mceliece_8192128",
+        "security": 5,
+        "keySize": {
+          "publicKey": 1357824,
+          "secretKey": 14120,
+          "ciphertext": 208,
+          "sharedSecret": 32
+        }
+      },
+      "Classic-McEliece-8192128f": {
+        "slug": "classic-mceliece-8192128f",
+        "cmake_var": "classic_mceliece_8192128f",
+        "security": 5,
+        "keySize": {
+          "publicKey": 1357824,
+          "secretKey": 14120,
+          "ciphertext": 208,
+          "sharedSecret": 32
+        }
+      }
+    },
+    "ntru": {
+      "NTRU-HPS-2048-509": {
+        "slug": "ntru-hps-2048-509",
+        "cmake_var": "ntru_hps2048509",
+        "security": 1,
+        "keySize": {
+          "publicKey": 699,
+          "secretKey": 935,
+          "ciphertext": 699,
+          "sharedSecret": 32
+        }
+      },
+      "NTRU-HPS-2048-677": {
+        "slug": "ntru-hps-2048-677",
+        "cmake_var": "ntru_hps2048677",
+        "security": 3,
+        "keySize": {
+          "publicKey": 930,
+          "secretKey": 1234,
+          "ciphertext": 930,
+          "sharedSecret": 32
+        }
+      },
+      "NTRU-HPS-4096-821": {
+        "slug": "ntru-hps-4096-821",
+        "cmake_var": "ntru_hps4096821",
+        "security": 5,
+        "keySize": {
+          "publicKey": 1230,
+          "secretKey": 1590,
+          "ciphertext": 1230,
+          "sharedSecret": 32
+        }
+      },
+      "NTRU-HPS-4096-1229": {
+        "slug": "ntru-hps-4096-1229",
+        "cmake_var": "ntru_hps40961229",
+        "security": 5,
+        "keySize": {
+          "publicKey": 1842,
+          "secretKey": 2366,
+          "ciphertext": 1842,
+          "sharedSecret": 32
+        }
+      },
+      "NTRU-HRSS-701": {
+        "slug": "ntru-hrss-701",
+        "cmake_var": "ntru_hrss701",
+        "security": 3,
+        "keySize": {
+          "publicKey": 1138,
+          "secretKey": 1450,
+          "ciphertext": 1138,
+          "sharedSecret": 32
+        }
+      },
+      "NTRU-HRSS-1373": {
+        "slug": "ntru-hrss-1373",
+        "cmake_var": "ntru_hrss1373",
+        "security": 5,
+        "keySize": {
+          "publicKey": 2401,
+          "secretKey": 2983,
+          "ciphertext": 2401,
+          "sharedSecret": 32
+        }
+      }
+    },
+    "ntruprime": {
+      "sntrup761": {
+        "slug": "sntrup761",
+        "cmake_var": "ntruprime_sntrup761",
+        "security": 3,
+        "keySize": {
+          "publicKey": 1158,
+          "secretKey": 1763,
+          "ciphertext": 1039,
+          "sharedSecret": 32
+        }
+      }
+    }
+  },
+  "sig": {
+    "ml-dsa": {
+      "ML-DSA-44": {
+        "slug": "ml-dsa-44",
+        "cmake_var": "ml_dsa_44",
+        "security": 2,
+        "standardized": true,
+        "keySize": {
+          "publicKey": 1312,
+          "secretKey": 2560,
+          "signature": 2420
+        }
+      },
+      "ML-DSA-65": {
+        "slug": "ml-dsa-65",
+        "cmake_var": "ml_dsa_65",
+        "security": 3,
+        "standardized": true,
+        "keySize": {
+          "publicKey": 1952,
+          "secretKey": 4032,
+          "signature": 3309
+        }
+      },
+      "ML-DSA-87": {
+        "slug": "ml-dsa-87",
+        "cmake_var": "ml_dsa_87",
+        "security": 5,
+        "standardized": true,
+        "keySize": {
+          "publicKey": 2592,
+          "secretKey": 4896,
+          "signature": 4627
+        }
+      }
+    },
+    "falcon": {
+      "Falcon-512": {
+        "slug": "falcon-512",
+        "cmake_var": "falcon_512",
+        "security": 1,
+        "keySize": {
+          "publicKey": 897,
+          "secretKey": 1281,
+          "signature": 752
+        }
+      },
+      "Falcon-1024": {
+        "slug": "falcon-1024",
+        "cmake_var": "falcon_1024",
+        "security": 5,
+        "keySize": {
+          "publicKey": 1793,
+          "secretKey": 2305,
+          "signature": 1462
+        }
+      },
+      "Falcon-padded-512": {
+        "slug": "falcon-padded-512",
+        "cmake_var": "falcon_padded_512",
+        "security": 1,
+        "keySize": {
+          "publicKey": 897,
+          "secretKey": 1281,
+          "signature": 666
+        }
+      },
+      "Falcon-padded-1024": {
+        "slug": "falcon-padded-1024",
+        "cmake_var": "falcon_padded_1024",
+        "security": 5,
+        "keySize": {
+          "publicKey": 1793,
+          "secretKey": 2305,
+          "signature": 1280
+        }
+      }
+    },
+    "slh-dsa": {
+      "SLH-DSA-SHA2-128f": {
+        "slug": "slh-dsa-sha2-128f",
+        "cmake_var": "slh_dsa_pure_sha2_128f",
+        "security": 1,
+        "standardized": true,
+        "keySize": {
+          "publicKey": 32,
+          "secretKey": 64,
+          "signature": 17088
+        }
+      },
+      "SLH-DSA-SHA2-128s": {
+        "slug": "slh-dsa-sha2-128s",
+        "cmake_var": "slh_dsa_pure_sha2_128s",
+        "security": 1,
+        "standardized": true,
+        "keySize": {
+          "publicKey": 32,
+          "secretKey": 64,
+          "signature": 7856
+        }
+      },
+      "SLH-DSA-SHA2-192f": {
+        "slug": "slh-dsa-sha2-192f",
+        "cmake_var": "slh_dsa_pure_sha2_192f",
+        "security": 3,
+        "standardized": true,
+        "keySize": {
+          "publicKey": 48,
+          "secretKey": 96,
+          "signature": 35664
+        }
+      },
+      "SLH-DSA-SHA2-192s": {
+        "slug": "slh-dsa-sha2-192s",
+        "cmake_var": "slh_dsa_pure_sha2_192s",
+        "security": 3,
+        "standardized": true,
+        "keySize": {
+          "publicKey": 48,
+          "secretKey": 96,
+          "signature": 16224
+        }
+      },
+      "SLH-DSA-SHA2-256f": {
+        "slug": "slh-dsa-sha2-256f",
+        "cmake_var": "slh_dsa_pure_sha2_256f",
+        "security": 5,
+        "standardized": true,
+        "keySize": {
+          "publicKey": 64,
+          "secretKey": 128,
+          "signature": 49856
+        }
+      },
+      "SLH-DSA-SHA2-256s": {
+        "slug": "slh-dsa-sha2-256s",
+        "cmake_var": "slh_dsa_pure_sha2_256s",
+        "security": 5,
+        "standardized": true,
+        "keySize": {
+          "publicKey": 64,
+          "secretKey": 128,
+          "signature": 29792
+        }
+      },
+      "SLH-DSA-SHAKE-128f": {
+        "slug": "slh-dsa-shake-128f",
+        "cmake_var": "slh_dsa_pure_shake_128f",
+        "security": 1,
+        "standardized": true,
+        "keySize": {
+          "publicKey": 32,
+          "secretKey": 64,
+          "signature": 17088
+        }
+      },
+      "SLH-DSA-SHAKE-128s": {
+        "slug": "slh-dsa-shake-128s",
+        "cmake_var": "slh_dsa_pure_shake_128s",
+        "security": 1,
+        "standardized": true,
+        "keySize": {
+          "publicKey": 32,
+          "secretKey": 64,
+          "signature": 7856
+        }
+      },
+      "SLH-DSA-SHAKE-192f": {
+        "slug": "slh-dsa-shake-192f",
+        "cmake_var": "slh_dsa_pure_shake_192f",
+        "security": 3,
+        "standardized": true,
+        "keySize": {
+          "publicKey": 48,
+          "secretKey": 96,
+          "signature": 35664
+        }
+      },
+      "SLH-DSA-SHAKE-192s": {
+        "slug": "slh-dsa-shake-192s",
+        "cmake_var": "slh_dsa_pure_shake_192s",
+        "security": 3,
+        "standardized": true,
+        "keySize": {
+          "publicKey": 48,
+          "secretKey": 96,
+          "signature": 16224
+        }
+      },
+      "SLH-DSA-SHAKE-256f": {
+        "slug": "slh-dsa-shake-256f",
+        "cmake_var": "slh_dsa_pure_shake_256f",
+        "security": 5,
+        "standardized": true,
+        "keySize": {
+          "publicKey": 64,
+          "secretKey": 128,
+          "signature": 49856
+        }
+      },
+      "SLH-DSA-SHAKE-256s": {
+        "slug": "slh-dsa-shake-256s",
+        "cmake_var": "slh_dsa_pure_shake_256s",
+        "security": 5,
+        "standardized": true,
+        "keySize": {
+          "publicKey": 64,
+          "secretKey": 128,
+          "signature": 29792
+        }
+      }
+    },
+    "mayo": {
+      "MAYO-1": {
+        "slug": "mayo-1",
+        "cmake_var": "mayo_1",
+        "security": 1,
+        "keySize": {
+          "publicKey": 1420,
+          "secretKey": 24,
+          "signature": 454
+        }
+      },
+      "MAYO-2": {
+        "slug": "mayo-2",
+        "cmake_var": "mayo_2",
+        "security": 1,
+        "keySize": {
+          "publicKey": 4912,
+          "secretKey": 24,
+          "signature": 186
+        }
+      },
+      "MAYO-3": {
+        "slug": "mayo-3",
+        "cmake_var": "mayo_3",
+        "security": 3,
+        "keySize": {
+          "publicKey": 2986,
+          "secretKey": 32,
+          "signature": 681
+        }
+      },
+      "MAYO-5": {
+        "slug": "mayo-5",
+        "cmake_var": "mayo_5",
+        "security": 5,
+        "keySize": {
+          "publicKey": 5554,
+          "secretKey": 40,
+          "signature": 964
+        }
+      }
+    },
+    "cross": {
+      "CROSS-rsdp-128-balanced": {
+        "slug": "cross-rsdp-128-balanced",
+        "cmake_var": "cross_rsdp_128_balanced",
+        "security": 1,
+        "keySize": {
+          "publicKey": 77,
+          "secretKey": 32,
+          "signature": 13152
+        }
+      },
+      "CROSS-rsdp-128-fast": {
+        "slug": "cross-rsdp-128-fast",
+        "cmake_var": "cross_rsdp_128_fast",
+        "security": 1,
+        "keySize": {
+          "publicKey": 77,
+          "secretKey": 32,
+          "signature": 18432
+        }
+      },
+      "CROSS-rsdp-128-small": {
+        "slug": "cross-rsdp-128-small",
+        "cmake_var": "cross_rsdp_128_small",
+        "security": 1,
+        "keySize": {
+          "publicKey": 77,
+          "secretKey": 32,
+          "signature": 12432
+        }
+      },
+      "CROSS-rsdp-192-balanced": {
+        "slug": "cross-rsdp-192-balanced",
+        "cmake_var": "cross_rsdp_192_balanced",
+        "security": 3,
+        "keySize": {
+          "publicKey": 115,
+          "secretKey": 48,
+          "signature": 29853
+        }
+      },
+      "CROSS-rsdp-192-fast": {
+        "slug": "cross-rsdp-192-fast",
+        "cmake_var": "cross_rsdp_192_fast",
+        "security": 3,
+        "keySize": {
+          "publicKey": 115,
+          "secretKey": 48,
+          "signature": 41406
+        }
+      },
+      "CROSS-rsdp-192-small": {
+        "slug": "cross-rsdp-192-small",
+        "cmake_var": "cross_rsdp_192_small",
+        "security": 3,
+        "keySize": {
+          "publicKey": 115,
+          "secretKey": 48,
+          "signature": 28391
+        }
+      },
+      "CROSS-rsdp-256-balanced": {
+        "slug": "cross-rsdp-256-balanced",
+        "cmake_var": "cross_rsdp_256_balanced",
+        "security": 5,
+        "keySize": {
+          "publicKey": 153,
+          "secretKey": 64,
+          "signature": 53527
+        }
+      },
+      "CROSS-rsdp-256-fast": {
+        "slug": "cross-rsdp-256-fast",
+        "cmake_var": "cross_rsdp_256_fast",
+        "security": 5,
+        "keySize": {
+          "publicKey": 153,
+          "secretKey": 64,
+          "signature": 74590
+        }
+      },
+      "CROSS-rsdp-256-small": {
+        "slug": "cross-rsdp-256-small",
+        "cmake_var": "cross_rsdp_256_small",
+        "security": 5,
+        "keySize": {
+          "publicKey": 153,
+          "secretKey": 64,
+          "signature": 50818
+        }
+      },
+      "CROSS-rsdpg-128-balanced": {
+        "slug": "cross-rsdpg-128-balanced",
+        "cmake_var": "cross_rsdpg_128_balanced",
+        "security": 1,
+        "keySize": {
+          "publicKey": 54,
+          "secretKey": 32,
+          "signature": 9120
+        }
+      },
+      "CROSS-rsdpg-128-fast": {
+        "slug": "cross-rsdpg-128-fast",
+        "cmake_var": "cross_rsdpg_128_fast",
+        "security": 1,
+        "keySize": {
+          "publicKey": 54,
+          "secretKey": 32,
+          "signature": 11980
+        }
+      },
+      "CROSS-rsdpg-128-small": {
+        "slug": "cross-rsdpg-128-small",
+        "cmake_var": "cross_rsdpg_128_small",
+        "security": 1,
+        "keySize": {
+          "publicKey": 54,
+          "secretKey": 32,
+          "signature": 8960
+        }
+      },
+      "CROSS-rsdpg-192-balanced": {
+        "slug": "cross-rsdpg-192-balanced",
+        "cmake_var": "cross_rsdpg_192_balanced",
+        "security": 3,
+        "keySize": {
+          "publicKey": 83,
+          "secretKey": 48,
+          "signature": 22464
+        }
+      },
+      "CROSS-rsdpg-192-fast": {
+        "slug": "cross-rsdpg-192-fast",
+        "cmake_var": "cross_rsdpg_192_fast",
+        "security": 3,
+        "keySize": {
+          "publicKey": 83,
+          "secretKey": 48,
+          "signature": 26772
+        }
+      },
+      "CROSS-rsdpg-192-small": {
+        "slug": "cross-rsdpg-192-small",
+        "cmake_var": "cross_rsdpg_192_small",
+        "security": 3,
+        "keySize": {
+          "publicKey": 83,
+          "secretKey": 48,
+          "signature": 20452
+        }
+      },
+      "CROSS-rsdpg-256-balanced": {
+        "slug": "cross-rsdpg-256-balanced",
+        "cmake_var": "cross_rsdpg_256_balanced",
+        "security": 5,
+        "keySize": {
+          "publicKey": 106,
+          "secretKey": 64,
+          "signature": 40100
+        }
+      },
+      "CROSS-rsdpg-256-fast": {
+        "slug": "cross-rsdpg-256-fast",
+        "cmake_var": "cross_rsdpg_256_fast",
+        "security": 5,
+        "keySize": {
+          "publicKey": 106,
+          "secretKey": 64,
+          "signature": 48102
+        }
+      },
+      "CROSS-rsdpg-256-small": {
+        "slug": "cross-rsdpg-256-small",
+        "cmake_var": "cross_rsdpg_256_small",
+        "security": 5,
+        "keySize": {
+          "publicKey": 106,
+          "secretKey": 64,
+          "signature": 36454
+        }
+      }
+    },
+    "snova": {
+      "SNOVA-24-5-4": {
+        "slug": "snova-24-5-4",
+        "cmake_var": "snova_SNOVA_24_5_4",
+        "security": 1,
+        "keySize": {
+          "publicKey": 1016,
+          "secretKey": 48,
+          "signature": 248
+        }
+      },
+      "SNOVA-24-5-4-esk": {
+        "slug": "snova-24-5-4-esk",
+        "cmake_var": "snova_SNOVA_24_5_4_esk",
+        "security": 1,
+        "keySize": {
+          "publicKey": 1016,
+          "secretKey": 36848,
+          "signature": 248
+        }
+      },
+      "SNOVA-24-5-4-SHAKE": {
+        "slug": "snova-24-5-4-shake",
+        "cmake_var": "snova_SNOVA_24_5_4_SHAKE",
+        "security": 1,
+        "keySize": {
+          "publicKey": 1016,
+          "secretKey": 48,
+          "signature": 248
+        }
+      },
+      "SNOVA-24-5-4-SHAKE-esk": {
+        "slug": "snova-24-5-4-shake-esk",
+        "cmake_var": "snova_SNOVA_24_5_4_SHAKE_esk",
+        "security": 1,
+        "keySize": {
+          "publicKey": 1016,
+          "secretKey": 36848,
+          "signature": 248
+        }
+      },
+      "SNOVA-24-5-5": {
+        "slug": "snova-24-5-5",
+        "cmake_var": "snova_SNOVA_24_5_5",
+        "security": 1,
+        "keySize": {
+          "publicKey": 1579,
+          "secretKey": 48,
+          "signature": 379
+        }
+      },
+      "SNOVA-25-8-3": {
+        "slug": "snova-25-8-3",
+        "cmake_var": "snova_SNOVA_25_8_3",
+        "security": 1,
+        "keySize": {
+          "publicKey": 2320,
+          "secretKey": 48,
+          "signature": 165
+        }
+      },
+      "SNOVA-29-6-5": {
+        "slug": "snova-29-6-5",
+        "cmake_var": "snova_SNOVA_29_6_5",
+        "security": 3,
+        "keySize": {
+          "publicKey": 2716,
+          "secretKey": 48,
+          "signature": 454
+        }
+      },
+      "SNOVA-37-17-2": {
+        "slug": "snova-37-17-2",
+        "cmake_var": "snova_SNOVA_37_17_2",
+        "security": 3,
+        "keySize": {
+          "publicKey": 9842,
+          "secretKey": 48,
+          "signature": 124
+        }
+      },
+      "SNOVA-37-8-4": {
+        "slug": "snova-37-8-4",
+        "cmake_var": "snova_SNOVA_37_8_4",
+        "security": 3,
+        "keySize": {
+          "publicKey": 4112,
+          "secretKey": 48,
+          "signature": 376
+        }
+      },
+      "SNOVA-49-11-3": {
+        "slug": "snova-49-11-3",
+        "cmake_var": "snova_SNOVA_49_11_3",
+        "security": 5,
+        "keySize": {
+          "publicKey": 6006,
+          "secretKey": 48,
+          "signature": 286
+        }
+      },
+      "SNOVA-56-25-2": {
+        "slug": "snova-56-25-2",
+        "cmake_var": "snova_SNOVA_56_25_2",
+        "security": 5,
+        "keySize": {
+          "publicKey": 31266,
+          "secretKey": 48,
+          "signature": 178
+        }
+      },
+      "SNOVA-60-10-4": {
+        "slug": "snova-60-10-4",
+        "cmake_var": "snova_SNOVA_60_10_4",
+        "security": 5,
+        "keySize": {
+          "publicKey": 8016,
+          "secretKey": 48,
+          "signature": 576
+        }
+      }
+    },
+    "uov": {
+      "OV-Ip": {
+        "slug": "ov-ip",
+        "cmake_var": "uov_ov_Ip",
+        "security": 1,
+        "keySize": {
+          "publicKey": 278432,
+          "secretKey": 237896,
+          "signature": 128
+        }
+      },
+      "OV-Ip-pkc": {
+        "slug": "ov-ip-pkc",
+        "cmake_var": "uov_ov_Ip_pkc",
+        "security": 1,
+        "keySize": {
+          "publicKey": 43576,
+          "secretKey": 237896,
+          "signature": 128
+        }
+      },
+      "OV-Ip-pkc-skc": {
+        "slug": "ov-ip-pkc-skc",
+        "cmake_var": "uov_ov_Ip_pkc_skc",
+        "security": 1,
+        "keySize": {
+          "publicKey": 43576,
+          "secretKey": 32,
+          "signature": 128
+        }
+      },
+      "OV-Is": {
+        "slug": "ov-is",
+        "cmake_var": "uov_ov_Is",
+        "security": 1,
+        "keySize": {
+          "publicKey": 412160,
+          "secretKey": 348704,
+          "signature": 96
+        }
+      },
+      "OV-Is-pkc": {
+        "slug": "ov-is-pkc",
+        "cmake_var": "uov_ov_Is_pkc",
+        "security": 1,
+        "keySize": {
+          "publicKey": 66576,
+          "secretKey": 348704,
+          "signature": 96
+        }
+      },
+      "OV-Is-pkc-skc": {
+        "slug": "ov-is-pkc-skc",
+        "cmake_var": "uov_ov_Is_pkc_skc",
+        "security": 1,
+        "keySize": {
+          "publicKey": 66576,
+          "secretKey": 32,
+          "signature": 96
+        }
+      },
+      "OV-III": {
+        "slug": "ov-iii",
+        "cmake_var": "uov_ov_III",
+        "security": 3,
+        "keySize": {
+          "publicKey": 1225440,
+          "secretKey": 1044320,
+          "signature": 200
+        }
+      },
+      "OV-III-pkc": {
+        "slug": "ov-iii-pkc",
+        "cmake_var": "uov_ov_III_pkc",
+        "security": 3,
+        "keySize": {
+          "publicKey": 189232,
+          "secretKey": 1044320,
+          "signature": 200
+        }
+      },
+      "OV-III-pkc-skc": {
+        "slug": "ov-iii-pkc-skc",
+        "cmake_var": "uov_ov_III_pkc_skc",
+        "security": 3,
+        "keySize": {
+          "publicKey": 189232,
+          "secretKey": 32,
+          "signature": 200
+        }
+      },
+      "OV-V": {
+        "slug": "ov-v",
+        "cmake_var": "uov_ov_V",
+        "security": 5,
+        "keySize": {
+          "publicKey": 2869440,
+          "secretKey": 2436704,
+          "signature": 260
+        }
+      },
+      "OV-V-pkc": {
+        "slug": "ov-v-pkc",
+        "cmake_var": "uov_ov_V_pkc",
+        "security": 5,
+        "keySize": {
+          "publicKey": 446992,
+          "secretKey": 2436704,
+          "signature": 260
+        }
+      },
+      "OV-V-pkc-skc": {
+        "slug": "ov-v-pkc-skc",
+        "cmake_var": "uov_ov_V_pkc_skc",
+        "security": 5,
+        "keySize": {
+          "publicKey": 446992,
+          "secretKey": 32,
+          "signature": 260
+        }
+      }
+    }
+  }
+}

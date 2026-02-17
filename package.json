@@ -1,0 +1,108 @@
+{
+  "name": "@oqs/liboqs-js",
+  "version": "0.15.0",
+  "description": "Post-quantum cryptography for Node.js and browsers via WebAssembly bindings to liboqs",
+  "type": "module",
+  "main": "src/index.js",
+  "types": "src/types/index.d.ts",
+  "sideEffects": false,
+  "bin": {
+    "liboqs": "./bin/cli.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./src/types/index.d.ts",
+      "import": "./src/index.js"
+    },
+    "./kem": {
+      "types": "./src/types/index.d.ts",
+      "import": "./src/kem.js"
+    },
+    "./sig": {
+      "types": "./src/types/index.d.ts",
+      "import": "./src/sig.js"
+    },
+    "./errors": {
+      "types": "./src/types/errors.d.ts",
+      "import": "./src/core/errors.js"
+    }
+  },
+  "files": [
+    "src/",
+    "bin/",
+    "dist/"
+  ],
+  "scripts": {
+    "build": "./build.sh",
+    "build:single": "./build.sh",
+    "docs": "typedoc",
+    "typecheck": "tsc --noEmit",
+    "test": "bun run typecheck && bun run test:node && bun run test:browser",
+    "test:node": "vitest run",
+    "test:browser": "TEST_ENV=browser vitest run",
+    "test:watch": "vitest",
+    "test:cli": "vitest run tests/cli.test.ts",
+    "test:kem": "vitest run tests/kem.test.ts",
+    "test:sig": "vitest run tests/sig.test.ts",
+    "clean": "./build.sh --clean"
+  },
+  "keywords": [
+    "post-quantum",
+    "cryptography",
+    "pqc",
+    "liboqs",
+    "wasm",
+    "webassembly",
+    "quantum-resistant",
+    "nist",
+    "kem",
+    "signature",
+    "digital-signature",
+    "key-encapsulation",
+    "ml-kem",
+    "ml-dsa",
+    "kyber",
+    "dilithium",
+    "falcon",
+    "slh-dsa",
+    "classic-mceliece",
+    "frodokem",
+    "ntru",
+    "hqc",
+    "cross",
+    "mayo",
+    "uov",
+    "snova",
+    "lattice-based",
+    "code-based",
+    "hash-based"
+  ],
+  "author": {
+    "name": "Open Quantum Safe",
+    "url": "https://github.com/open-quantum-safe"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/open-quantum-safe/liboqs-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/open-quantum-safe/liboqs-js/issues"
+  },
+  "homepage": "https://open-quantum-safe.github.io/liboqs-js",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@vitest/browser": "^3.2.4",
+    "playwright": "^1.55.1",
+    "typedoc": "^0.28.13",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
+  }
+}
